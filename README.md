@@ -31,11 +31,13 @@ Requirements
 - Windows 10 development environment (build runs `./swigwin-4.0.1/swig.exe`) -- possibly you could remove this build step, keeping the original generated files included here (and build from Mac/Linux environment)
 - Visual Studio 2019 Community Edition with Xamarin.Android and Android NDK and Android SDKs
 - Android device (ARM or ARM64).  We have not tested in simulator.
+- Optional: Your own custom built-Breakpad post-mortem tools (`dump_syms` and `minidump_stackwalk`)
 
 Building the demo
 -----------------
 
 - In VS2019, select the appropriate architecture for your device (usually ARM or ARM64), and either Debug or Release configuration will work
+- It does not seem to matter whether the *Use the concurrent garbage collector* is checked or not in the MonoGCDeadlockTest.csproj > Android Options tab.  In fact it may be easier to trigger the deadlock with this unchecked.
 - You can run with either the debugger attached or not
 - Easiest to read backtraces come with Debug build and debugger not attached
 - If all goes well, the build will create an APK with native libraries from *MonoGCDeadlockLib* and Google Breakpad and deploy to device
@@ -57,12 +59,16 @@ Once you get an ANR and/or Mono GC deadlock, you can communicate with the native
 - Wait for the app to close...
 - So you don't immediately crash on next start : `adb shell rm /sdcard/kill.app`
 - `adb shell ls -l /sdcard/` - You should see some file like *ab7a68ba-397b-4c55-10d0bda3-a3340271.dmp*
-- Now pull the minidump to your computer `adb shell pull /sdcard/ab7a68ba-397b-4c55-10d0bda3-a3340271.dmp`
+- Now pull the minidump to your computer : `adb pull /sdcard/ab7a68ba-397b-4c55-10d0bda3-a3340271.dmp`
 
 Homework assignment!
 --------------------
 
-For post-processing the minidump file (to see the symbolicated thread backtraces), you will need both the `dump_syms` and `minidump_stackwalk` from Breakpad compiled for your computer.  Compile these tools from either the [Google Breakpad](https://github.com/google/breakpad) repo (or from our included version here).
+For post-processing the *minidump.dmp* file (to see the symbolicated thread backtraces), you will need both the `dump_syms` and `minidump_stackwalk` from Breakpad compiled for your computer.  Compile these tools from either the [Google Breakpad](https://github.com/google/breakpad) repo (or from our included version here).
+
+In addition to the *minidump.dmp*, you will also need the *libmonosgen-2.0.so* and *libMonoGCDeadlockLib.so* from the APK that was installed.
+
+For Mono project investigators, we could help you with this step if desired, please get in touch with us.
 
 Sample stacktraces from our devices
 -----------------------------------
