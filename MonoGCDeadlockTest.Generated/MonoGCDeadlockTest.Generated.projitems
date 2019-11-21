@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>5c31de4d-4437-4491-a7c6-a898c1d41e15</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>MonoGCDeadlockTest.Generated</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)MonoGCDeadlockLib.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MonoGCDeadlockLibCallbacks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MonoGCDeadlockLibPINVOKE.cs" />
+  </ItemGroup>
+</Project>
