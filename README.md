@@ -28,6 +28,7 @@ Additionally, this test has some tooling to help introspect into the app state p
 Requirements
 ------------
 
+- Windows 10 development environment (build runs `./swigwin-4.0.1/swig.exe`) -- possibly you could remove this build step, keeping the original generated files included here (and build from Mac/Linux environment)
 - Visual Studio 2019 Community Edition with Xamarin.Android and Android NDK and Android SDKs
 - Android device (ARM or ARM64).  We have not tested in simulator.
 
