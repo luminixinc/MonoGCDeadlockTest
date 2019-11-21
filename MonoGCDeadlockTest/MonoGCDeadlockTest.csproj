@@ -151,7 +151,7 @@ IF EXIST $(SolutionDir)breakpad\ARM64\$(Configuration)\libBreakpad.Droid.so (cop
 
 IF EXIST $(SolutionDir)breakpad\x86\$(Configuration)\libBreakpad.Droid.so (copy /y /b $(SolutionDir)breakpad\x86\$(Configuration)\libBreakpad.Droid.so $(ProjectDir)lib\x86\libBreakpad.Droid.so) ELSE copy /y nul $(ProjectDir)lib\x86\libBreakpad.Droid.so
 
-IF EXIST $(SolutionDir)breakpad\x86_64\$(Configuration)\libBreakpad.Droid.so (copy /y /b $(SolutionDir)breakpad\x86_64\$(Configuration)\libBreakpad.Droid.so $(ProjectDir)lib\x86_64\libBreakpad.Droid.so) ELSE copy /y nul $(ProjectDir)lib\x86_64\libBreakpad.Droid.soo</PreBuildEvent>
+IF EXIST $(SolutionDir)breakpad\x86_64\$(Configuration)\libBreakpad.Droid.so (copy /y /b $(SolutionDir)breakpad\x86_64\$(Configuration)\libBreakpad.Droid.so $(ProjectDir)lib\x86_64\libBreakpad.Droid.so) ELSE copy /y nul $(ProjectDir)lib\x86_64\libBreakpad.Droid.so</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
     Other similar extension points exist, see Microsoft.Common.targets.
