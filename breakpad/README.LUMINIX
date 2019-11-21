@@ -1,0 +1,19 @@
+2017/06/22 HACK NOTES
+
+breakpad_getcontext.S is command-line pre-compiled and included in project because I cannot figure out how to get Visual
+Studio 2015 to build this as an assembly file.  The problem is that it is always specifying a '-x' flag and I cannot
+figure out to get it to not include this flag.
+
+To see the error, (and for future toolchain updates):
+    - Include breakpad_getcontext.S in the build as C/C++ source
+    - Rebuild Breakpad
+    - Note the failure to build breakpad_getcontext.S
+    - Copy the CLI invocation from the C:\path\to\clang.exe
+    - Drop to a VS developer command shell
+    - Navigate to the breakpad directory
+    - Paste the CLI invocation and re-run
+    - NOTE the exact same failure
+    - Re-run the build step without the '-x C++' flag
+    - NOTE a successful build
+    - Copy the breakpad_getcontext.o object file to the appropriate location for building the breakpad static library
+

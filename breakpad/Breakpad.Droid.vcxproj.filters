@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\client\linux\crash_generation\crash_generation_client.cc" />
+    <ClCompile Include="src\client\linux\dump_writer_common\thread_info.cc" />
+    <ClCompile Include="src\client\linux\dump_writer_common\ucontext_reader.cc" />
+    <ClCompile Include="src\client\linux\handler\exception_handler.cc" />
+    <ClCompile Include="src\client\linux\handler\minidump_descriptor.cc" />
+    <ClCompile Include="src\client\linux\log\log.cc" />
+    <ClCompile Include="src\client\linux\microdump_writer\microdump_writer.cc" />
+    <ClCompile Include="src\client\linux\minidump_writer\linux_dumper.cc" />
+    <ClCompile Include="src\client\linux\minidump_writer\linux_ptrace_dumper.cc" />
+    <ClCompile Include="src\client\linux\minidump_writer\minidump_writer.cc" />
+    <ClCompile Include="src\client\minidump_file_writer.cc" />
+    <ClCompile Include="src\common\convert_UTF.c" />
+    <ClCompile Include="src\common\md5.cc" />
+    <ClCompile Include="src\common\string_conversion.cc" />
+    <ClCompile Include="src\common\linux\elfutils.cc" />
+    <ClCompile Include="src\common\linux\file_id.cc" />
+    <ClCompile Include="src\common\linux\guid_creator.cc" />
+    <ClCompile Include="src\common\linux\linux_libc_support.cc" />
+    <ClCompile Include="src\common\linux\memory_mapped_file.cc" />
+    <ClCompile Include="src\common\linux\safe_readlink.cc" />
+    <ClCompile Include="src\third_party\luminix\lu_crash_handler.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\common\android\breakpad_getcontext.S" />
+  </ItemGroup>
+</Project>
