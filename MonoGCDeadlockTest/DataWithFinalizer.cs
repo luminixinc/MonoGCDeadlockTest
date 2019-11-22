@@ -36,7 +36,7 @@ namespace MonoGCDeadlockTest
         private bool _isDisposed;
         public void Dispose(bool disposing)
         {
-            lock (this)
+            //lock (this) -- unnecessary, dangerous, and a red herring in this demo!
             {
                 if (_isDisposed)
                 {
