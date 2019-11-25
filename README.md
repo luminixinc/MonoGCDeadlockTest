@@ -73,7 +73,7 @@ For Mono project investigators, we could help you with this step if desired, ple
 Sample stacktraces from our devices
 -----------------------------------
 
-*ThreadC* crash in Debug build configuration (Release is similar).  Note the call to `mono_gc_wait_for_bridge_processing()`:
+*ThreadC* backtrace in Debug build configuration (Release is similar).  Note the call to `mono_gc_wait_for_bridge_processing()`:
 ```
 Thread 23
  0  libc.so + 0x7f23c
@@ -129,7 +129,7 @@ Thread 23
     Found by: previous frame's frame pointer
 ```
 
-*ThreadN* crash in Debug build configuration (Release is similar).  Note the call to `mono_gc_pending_finalizers()`:
+*ThreadN* backtrace in Debug build configuration (Release is similar).  Note the call to `mono_gc_pending_finalizers()`:
 ```
 Thread 35
  0  libc.so + 0x7f23c
