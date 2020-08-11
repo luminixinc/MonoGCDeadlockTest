@@ -3,7 +3,12 @@ MonoGCDeadlockTest
 
 Attempts to force a deadlock in [Mono](https://github.com/mono/mono) garbage collection.
 
-Test case is for an app running on an Android device, but is not suspected to be Android-specific.
+Test case is for an app running on an Android device.
+
+UPDATE 2020/08/11
+-----------------
+
+**As of a "recent" Visual Studio 2019 16.5.X, we no longer see this issue.**  The [underlying issue has been resolved](https://github.com/mono/mono/issues/17878), thank you Mono team!
 
 Suspected scenario for deadlock race
 ------------------------------------
